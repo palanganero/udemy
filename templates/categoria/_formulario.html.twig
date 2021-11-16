@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block contenedor_principal %}
+    {% include "comunes/_mensajes.html.twig" %}
+    <form method="post">
+        <input type="text" name="nombre" id="nombre"  placeholder="nombre">
+        <input type="color" name="color" id="color" placeholder="color">
+        <input type="hidden" name="_token" value="{{ csrf_token('categoria') }}">
+        <button type="submit">Guardar</button>        
+    </form>
+{% endblock %}

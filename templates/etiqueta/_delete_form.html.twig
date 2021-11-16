@@ -1,0 +1,5 @@
+    <form method="post" action="{{ path('etiqueta_delete', {'id': etiquetum.id}) }}" onsubmit="return confirm('¿Estás seguro que deseas eliminar el registro?');">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ etiquetum.id) }}">
+        <button class="btn">Eliminar</button>
+    </form>

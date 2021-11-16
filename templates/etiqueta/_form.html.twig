@@ -1,0 +1,9 @@
+{% set ajax = ajax is defined and ajax %}
+{% if ajax %}
+   {{ include ('comunes/_mensajes.html.twig') }} 
+{% endif %}
+
+{{ form_start(form,{attr:{novalidate:'novalidate','data-ajax':ajax ? 'true':'false'}}) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
